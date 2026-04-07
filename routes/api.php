@@ -18,8 +18,9 @@ Route::prefix('v1')->group(function () {
         Route::post('attendance', [AttendanceController::class, 'store']); 
 
         Route::get('history', [HistoryController::class, 'index']);
-        });
+        
         Route::get('report/excel', [HistoryController::class, 'exportExcel']);
+    });
 });
 
 
