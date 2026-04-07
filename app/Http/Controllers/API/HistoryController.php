@@ -18,7 +18,7 @@ class HistoryController extends Controller
         $user = $request->user();
         
         // Ambil data absen, urutkan dari yang terbaru
-        $query = Attendance::with('location')
+        $query = Attendance::with(['location', 'user'])
             ->where('user_id', $user->id);
 
         // Filter berdasarkan bulan jika ada (format: YYYY-MM)
